@@ -152,3 +152,17 @@ While not covered in detail, be aware of:
 - Jonathan Long et al. "Fully Convolutional Networks for Semantic Segmentation" (2015)
 - Kaiming He et al. "Mask R-CNN" (2017)
 - Mingxing Tan, Quoc V. Le. "EfficientNet: Rethinking Model Scaling for CNNs" (2019)
+
+## Navigation
+
+- [← Back to Main](../README.md)
+- [← Previous: Neural Networks](../05-neural-networks/README.md)
+- [→ Next: Advanced Topics](../07-advanced-topics/README.md)
+
+### Other Sections
+- [Fundamentals](../01-fundamentals/README.md)
+- [Core Concepts](../02-core-concepts/README.md)
+- [Classical ML](../03-classical-ml/README.md)
+- [Evaluation Metrics](../04-evaluation-metrics/README.md)
+- [Practical Guides](../08-practical-guides/README.md)
+- [Resources](../09-resources/README.md)

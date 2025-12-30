@@ -99,3 +99,17 @@ After completing this section, you'll be ready to:
 ---
 
 *Each topic includes theoretical explanations, mathematical formulas, and practical examples to reinforce understanding.*
+
+## Navigation
+
+- [← Back to Main](../README.md)
+- [→ Next: Core Concepts](../02-core-concepts/README.md)
+
+### Other Sections
+- [Classical ML](../03-classical-ml/README.md)
+- [Evaluation Metrics](../04-evaluation-metrics/README.md)
+- [Neural Networks](../05-neural-networks/README.md)
+- [Famous Architectures](../06-famous-architectures/README.md)
+- [Advanced Topics](../07-advanced-topics/README.md)
+- [Practical Guides](../08-practical-guides/README.md)
+- [Resources](../09-resources/README.md)

@@ -73,3 +73,17 @@ Before diving into neural networks, ensure familiarity with:
 - Neural Networks and Deep Learning (Nielsen)
 - Pattern Recognition and Machine Learning (Bishop)
 - Dive into Deep Learning (Zhang et al.)
+
+## Navigation
+
+- [← Back to Main](../README.md)
+- [← Previous: Evaluation Metrics](../04-evaluation-metrics/README.md)
+- [→ Next: Famous Architectures](../06-famous-architectures/README.md)
+
+### Other Sections
+- [Fundamentals](../01-fundamentals/README.md)
+- [Core Concepts](../02-core-concepts/README.md)
+- [Classical ML](../03-classical-ml/README.md)
+- [Advanced Topics](../07-advanced-topics/README.md)
+- [Practical Guides](../08-practical-guides/README.md)
+- [Resources](../09-resources/README.md)

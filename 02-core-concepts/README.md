@@ -43,3 +43,17 @@ These core concepts are not just theoretical - they directly impact:
 - Understanding when models fail and why
 
 Understanding these fundamentals will help you make informed decisions throughout the machine learning workflow, from initial problem formulation to final model deployment.
+
+## Navigation
+
+- [← Back to Main](../README.md)
+- [← Previous: Fundamentals](../01-fundamentals/README.md)
+- [→ Next: Classical ML](../03-classical-ml/README.md)
+
+### Other Sections
+- [Evaluation Metrics](../04-evaluation-metrics/README.md)
+- [Neural Networks](../05-neural-networks/README.md)
+- [Famous Architectures](../06-famous-architectures/README.md)
+- [Advanced Topics](../07-advanced-topics/README.md)
+- [Practical Guides](../08-practical-guides/README.md)
+- [Resources](../09-resources/README.md)

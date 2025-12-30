@@ -171,15 +171,18 @@ If you find errors or have suggestions for additional resources, please contribu
 
 ## Navigation
 
-- [← Back to Machine Learning Main](../README.md)
-- [Fundamentals](../01-fundamentals/)
-- [Core Concepts](../02-core-concepts/)
-- [Classical ML](../03-classical-ml/)
-- [Evaluation Metrics](../04-evaluation-metrics/)
-- [Neural Networks](../05-neural-networks/)
-- [Famous Architectures](../06-famous-architectures/)
-- [Advanced Topics](../07-advanced-topics/)
-- [Practical Guides](../08-practical-guides/)
+- [← Back to Main](../README.md)
+- [← Previous: Practical Guides](../08-practical-guides/README.md)
+
+### Other Sections
+- [Fundamentals](../01-fundamentals/README.md)
+- [Core Concepts](../02-core-concepts/README.md)
+- [Classical ML](../03-classical-ml/README.md)
+- [Evaluation Metrics](../04-evaluation-metrics/README.md)
+- [Neural Networks](../05-neural-networks/README.md)
+- [Famous Architectures](../06-famous-architectures/README.md)
+- [Advanced Topics](../07-advanced-topics/README.md)
+- [Practical Guides](../08-practical-guides/README.md)
 
 ## License
 

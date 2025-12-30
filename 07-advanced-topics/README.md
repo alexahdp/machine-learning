@@ -61,3 +61,17 @@ For deeper exploration of these topics, consider:
 ## Note on Scope
 
 These overviews are intentionally high-level. Each topic represents a vast field with ongoing research and development. The goal is to provide conceptual understanding and awareness of these important areas in modern machine learning.
+
+## Navigation
+
+- [← Back to Main](../README.md)
+- [← Previous: Famous Architectures](../06-famous-architectures/README.md)
+- [→ Next: Practical Guides](../08-practical-guides/README.md)
+
+### Other Sections
+- [Fundamentals](../01-fundamentals/README.md)
+- [Core Concepts](../02-core-concepts/README.md)
+- [Classical ML](../03-classical-ml/README.md)
+- [Evaluation Metrics](../04-evaluation-metrics/README.md)
+- [Neural Networks](../05-neural-networks/README.md)
+- [Resources](../09-resources/README.md)

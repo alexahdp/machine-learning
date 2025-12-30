@@ -144,3 +144,17 @@ Sometimes they coincide (e.g., MSE can be both), but often the training objectiv
 - "Hands-On Machine Learning" by Aurélien Géron
 - Scikit-learn documentation on metrics
 - "The Elements of Statistical Learning" by Hastie, Tibshirani, and Friedman
+
+## Navigation
+
+- [← Back to Main](../README.md)
+- [← Previous: Classical ML](../03-classical-ml/README.md)
+- [→ Next: Neural Networks](../05-neural-networks/README.md)
+
+### Other Sections
+- [Fundamentals](../01-fundamentals/README.md)
+- [Core Concepts](../02-core-concepts/README.md)
+- [Famous Architectures](../06-famous-architectures/README.md)
+- [Advanced Topics](../07-advanced-topics/README.md)
+- [Practical Guides](../08-practical-guides/README.md)
+- [Resources](../09-resources/README.md)
