@@ -34,5 +34,16 @@ Each numbered directory has a `README.md` that indexes its contents and cross-li
 - Every section directory has a `README.md` that lists its files and provides navigation links (`← Back`, `→ Next`).
 - Each topic file includes: concept explanation, key formulas/intuition, and practical context for when/why it applies.
 - `09-resources/glossary.md` is the canonical place for terminology definitions — add new terms there when introducing them.
-- Images live in `01-fundamentals/images/` (the only section with visuals currently).
 - `07-advanced-topics/` is intentionally high-level; deep dives belong in separate repositories.
+
+## Diagrams
+
+Use diagrams to illustrate architecture flows, data transformations, and structural concepts. Follow this priority order:
+
+1. **Mermaid first** — write diagrams as fenced ` ```mermaid ` blocks. GitHub renders them natively as SVG. Use Mermaid for: data flow, layer-by-layer architectures, computation graphs, parallel branches (e.g. Inception module), skip connections, anything boxes-and-arrows. Keep node labels concise.
+
+2. **Embed local images** when a real visual is significantly clearer than a text diagram — particularly for: spatial feature map progressions, multi-column layouts, or cases where the original paper figure is the canonical reference. Download images with `curl` into a local `images/` subdirectory within the same section folder (e.g. `06-famous-architectures/computer-vision/images/`). Reference them with a relative path: `![alt text](images/filename.svg)`. Prefer SVG over PNG; prefer CC-licensed sources (e.g. Wikimedia Commons).
+
+3. **ASCII art** is acceptable for small inline illustrations (matrices, simple two-node flows) where a Mermaid block would be overkill.
+
+**Never hotlink external images.** Always copy images locally so the repo is self-contained.

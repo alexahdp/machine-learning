@@ -56,12 +56,13 @@
 
 **Initial idea** (computationally expensive):
 
-```
-Input
-  ├─→ [1×1 conv] ──→┐
-  ├─→ [3×3 conv] ──→├─→ Concatenate
-  ├─→ [5×5 conv] ──→│
-  └─→ [3×3 MaxPool]→┘
+```mermaid
+flowchart TB
+    In([Input]) --> A["1×1 Conv"]
+    In --> B["3×3 Conv"]
+    In --> C["5×5 Conv"]
+    In --> D["3×3 MaxPool"]
+    A & B & C & D --> Cat([Concatenate])
 ```
 
 **Problem**: Concatenating all these creates huge output depth!
@@ -77,20 +78,13 @@ Input
 
 **Solution**: Use 1×1 convolutions to reduce dimensions **before** expensive operations:
 
-```
-                    Input
-                      │
-        ┌─────────────┼─────────────┬─────────────┐
-        │             │             │             │
-    [1×1 conv]    [1×1 conv]    [1×1 conv]    [3×3 MaxPool]
-        │             │             │             │
-        │         [3×3 conv]    [5×5 conv]    [1×1 conv]
-        │             │             │             │
-        └─────────────┴─────────────┴─────────────┘
-                      │
-                 Concatenate
-                      │
-                   Output
+```mermaid
+flowchart TB
+    In([Input]) --> B1["1×1 Conv"]
+    In --> B2r["1×1 Conv\nreduce"] --> B2["3×3 Conv"]
+    In --> B3r["1×1 Conv\nreduce"] --> B3["5×5 Conv"]
+    In --> B4["3×3 MaxPool"] --> B4r["1×1 Conv\nreduce"]
+    B1 & B2 & B3 & B4r --> Cat([Concatenate])
 ```
 
 **Branches**:
@@ -122,6 +116,10 @@ $$\text{Output}_{h,w,k} = \sum_{c=1}^{C} W_{k,c} \cdot \text{Input}_{h,w,c} + b_
 ### GoogLeNet (Inception v1)
 
 **Overall structure**: 22 layers deep (27 with auxiliary classifiers)
+
+![GoogLeNet architecture](images/googlenet-architecture.svg)
+
+*Source: Wikimedia Commons, CC BY-SA 4.0. From Zhang et al., "Dive into Deep Learning"*
 
 ```
 Input: 224×224×3

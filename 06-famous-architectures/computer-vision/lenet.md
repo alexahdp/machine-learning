@@ -60,6 +60,12 @@ Output: Fully Connected (10 units - digits 0-9)
 
 **Total parameters**: ~60,000
 
+### Architecture Diagram
+
+![LeNet-5 architecture](images/lenet5-architecture.svg)
+
+*Source: Wikimedia Commons, CC BY-SA 4.0*
+
 ## Key Components
 
 ### Convolutional Layers

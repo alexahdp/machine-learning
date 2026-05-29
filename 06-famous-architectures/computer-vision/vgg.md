@@ -51,6 +51,36 @@ Flatten → FC-4096 → FC-4096 → FC-1000 → Softmax
 
 **Notation**: Conv3-64 means 3×3 convolution with 64 filters
 
+```mermaid
+flowchart TD
+    Input["Input 224×224×3"] --> B1
+    subgraph B1["Block 1 — 64 filters"]
+        direction LR
+        b1a["Conv3-64"] --> b1b["Conv3-64"] --> p1["MaxPool ÷2"]
+    end
+    B1 --> B2
+    subgraph B2["Block 2 — 128 filters"]
+        direction LR
+        b2a["Conv3-128"] --> b2b["Conv3-128"] --> p2["MaxPool ÷2"]
+    end
+    B2 --> B3
+    subgraph B3["Block 3 — 256 filters"]
+        direction LR
+        b3a["Conv3-256"] --> b3b["Conv3-256"] --> b3c["Conv3-256"] --> p3["MaxPool ÷2"]
+    end
+    B3 --> B4
+    subgraph B4["Block 4 — 512 filters"]
+        direction LR
+        b4a["Conv3-512"] --> b4b["Conv3-512"] --> b4c["Conv3-512"] --> p4["MaxPool ÷2"]
+    end
+    B4 --> B5
+    subgraph B5["Block 5 — 512 filters"]
+        direction LR
+        b5a["Conv3-512"] --> b5b["Conv3-512"] --> b5c["Conv3-512"] --> p5["MaxPool ÷2"]
+    end
+    B5 --> FC["FC-4096 → FC-4096 → FC-1000 → Softmax"]
+```
+
 ### VGG Family Comparison
 
 | Layer Type | VGG-11 | VGG-13 | VGG-16 | VGG-19 |
@@ -104,6 +134,18 @@ Flatten → FC-4096 → FC-4096 → FC-1000 → Softmax
 **Two 3×3 convolutions** = **One 5×5 convolution** (receptive field)
 
 **Three 3×3 convolutions** = **One 7×7 convolution**
+
+```mermaid
+flowchart LR
+    subgraph vgg["VGG: three 3×3 convs"]
+        direction TB
+        v1["3×3 Conv\nRF=3"] --> v2["3×3 Conv\nRF=5"] --> v3["3×3 Conv\nRF=7\n27C² params"]
+    end
+    subgraph trad["Traditional: one 7×7 conv"]
+        direction TB
+        t1["7×7 Conv\nRF=7\n49C² params"]
+    end
+```
 
 **Advantages of stacking small filters**:
 

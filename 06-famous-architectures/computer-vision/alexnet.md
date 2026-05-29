@@ -76,6 +76,12 @@ Output: Class probabilities
 
 **Total parameters**: ~62 million (mostly in fully connected layers)
 
+### Architecture Diagram
+
+![AlexNet block diagram](images/alexnet-block-diagram.svg)
+
+*Source: Wikimedia Commons, CC BY-SA 4.0. From Zhang et al., "Dive into Deep Learning"*
+
 ## Key Innovations
 
 ### 1. ReLU Activation

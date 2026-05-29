@@ -81,6 +81,14 @@ where:
 - $\alpha, \beta, \gamma$ are constants determined by grid search
 - $\phi$ is user-specified coefficient to control resources
 
+```mermaid
+flowchart LR
+    phi["Compound coefficient φ"] --> d["depth\nα^φ\nmore layers"]
+    phi --> w["width\nβ^φ\nmore channels"]
+    phi --> r["resolution\nγ^φ\nlarger input"]
+    d & w & r --> bal["Balanced\nScaling"]
+```
+
 ### Why This Works
 
 **Intuition**: If input image is bigger, network needs:
@@ -166,23 +174,15 @@ FC 1000
 
 **Mobile Inverted Bottleneck Convolution** (from MobileNetV2):
 
-```
-Input (C channels)
-    ↓
-1×1 Conv: Expand to t×C channels
-BatchNorm + Swish
-    ↓
-Depthwise k×k Conv: Process each channel separately
-BatchNorm + Swish
-    ↓
-Squeeze-and-Excitation
-    ↓
-1×1 Conv: Project back to C channels
-BatchNorm
-    ↓
-+ (Skip connection if stride=1 and same dimensions)
-    ↓
-Output
+```mermaid
+flowchart TB
+    In(["Input C channels"]) --> exp["1×1 Conv\nExpand to t×C\nBN + Swish"]
+    exp --> dw["Depthwise k×k Conv\nBN + Swish"]
+    dw --> se["Squeeze-and-Excite\nchannel attention"]
+    se --> proj["1×1 Conv\nProject to C'\nBN"]
+    In -. "skip\n(if stride=1\nand C=C')" .-> add(["⊕"])
+    proj --> add
+    add --> Out(["Output"])
 ```
 
 **Components**:

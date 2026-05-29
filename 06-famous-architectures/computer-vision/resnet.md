@@ -69,20 +69,14 @@ Then: $H(x) = F(x) + x$
 
 ### Residual Block
 
-```
-Input x
-    ↓
-    ├─────────────┐  (skip connection)
-    ↓             │
-  Conv - BN - ReLU
-    ↓             │
-  Conv - BN       │
-    ↓             │
-    +  ← ← ← ← ← ┘  (element-wise addition)
-    ↓
-   ReLU
-    ↓
-  Output
+```mermaid
+flowchart TB
+    x(["x"]) --> conv1["Conv 3×3\nBatchNorm + ReLU"]
+    conv1 --> conv2["Conv 3×3\nBatchNorm"]
+    x --> add(["⊕"])
+    conv2 --> add
+    add --> relu["ReLU"]
+    relu --> out(["F(x) + x"])
 ```
 
 **Mathematically**:
@@ -170,19 +164,18 @@ Softmax
 
 **Basic Block** (used in ResNet-18, ResNet-34):
 
-```
-x → [3×3 conv, C]
-  → [3×3 conv, C]
-  → + (with x)
+```mermaid
+flowchart LR
+    x(["x"]) --> c1["3×3 Conv C\nBN+ReLU"] --> c2["3×3 Conv C\nBN"] --> add(["⊕"]) --> out(["output"])
+    x --> add
 ```
 
 **Bottleneck Block** (used in ResNet-50+):
 
-```
-x → [1×1 conv, C]    (reduce dimensions)
-  → [3×3 conv, C]    (process features)
-  → [1×1 conv, 4C]   (expand dimensions)
-  → + (with x)
+```mermaid
+flowchart LR
+    x(["x"]) --> r["1×1 Conv C\nreduce"] --> c["3×3 Conv C\nprocess"] --> e["1×1 Conv 4C\nexpand"] --> add(["⊕"]) --> out(["output"])
+    x --> add
 ```
 
 **Why bottleneck**:
